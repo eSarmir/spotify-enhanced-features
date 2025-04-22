@@ -44,6 +44,8 @@ export default function SpotfyLogin() {
         const hashed = await sha256(codeVerifier)
         const codeChallenge = base64encode(hashed);
 
+        localStorage.setItem('code_verifier', codeVerifier);
+
         return codeChallenge;
     }
 

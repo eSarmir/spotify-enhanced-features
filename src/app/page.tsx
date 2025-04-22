@@ -1,15 +1,27 @@
 'use client';
 
+import App from "./app";
 import Login from "./login/page";
 
 export default function Home() {
 
-  	// const urlParams = new URLSearchParams(window.location.search);
-  	// const code = urlParams.get('code');
+	function Display() {
+
+		if (ShouldDisplayApp())
+		{
+			return <App />
+		}
+
+		return <Login />
+	}
+
+	function ShouldDisplayApp() {
+		return localStorage.getItem('access_token') !== null
+	}
 
   	return (
-		<div>
-			<Login />
-		</div>
+      <div>
+        {Display()}
+      </div>
   	);
 }

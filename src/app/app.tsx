@@ -1,10 +1,14 @@
 'use client';
 
-export default function App({ code }: { code: string }) {
+import Profile from "./profile";
+
+export default function App() {
 
     return (
         <div>
-            <p>Spotify Code: {code}</p>
+            <h1>Spotify App</h1>
+            <p>Welcome to the Spotify Enhanced Features App!</p>
+            <Profile />
         </div>
     );
 }

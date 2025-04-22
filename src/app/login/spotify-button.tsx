@@ -10,13 +10,13 @@ export default function SpotifyButton(
 
     const authUrl = new URL('https://accounts.spotify.com/authorize');
     
-    const params =  {
+    const params = {
         response_type: 'code',
         client_id: clientId,
         scope,
         code_challenge_method: 'S256',
         code_challenge: codeChallenge,
-        redirect_uri: 'http://localhost:3000/',
+        redirect_uri: 'http://localhost:3000/login/access-token',
     }
 
     authUrl.search = new URLSearchParams(params).toString();
